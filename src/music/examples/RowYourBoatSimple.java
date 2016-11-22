@@ -8,7 +8,7 @@ import static music.MusicLanguage.*;
 import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.MidiUnavailableException;
 
-public class RowYourBoatInitial {
+public class RowYourBoatSimple {
 
     public static void main(String[] args) throws MidiUnavailableException, InvalidMidiDataException {
         Music rowYourBoat =
@@ -18,6 +18,10 @@ public class RowYourBoatInitial {
                 + "G3/4 F/4 E3/4 D/4 C2",
                 PIANO);
         
-        MusicPlayer.play(rowYourBoat);
+        Music rowTwice =
+            concat(rowYourBoat, transpose(rowYourBoat, Pitch.OCTAVE));
+        
+        MusicPlayer.play(rowTwice);
     }
+
 }

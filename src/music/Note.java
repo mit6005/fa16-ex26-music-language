@@ -50,6 +50,13 @@ public class Note implements Music {
     }
     
     /**
+     * Transpose this note.
+     */
+    public Music transpose(int semitonesUp) {
+        return new Note(duration, pitch.transpose(semitonesUp), instrument);
+    }
+    
+    /**
      * Play this note.
      */
     public void play(SequencePlayer player, double atBeat) {

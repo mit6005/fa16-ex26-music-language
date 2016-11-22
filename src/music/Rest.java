@@ -28,6 +28,13 @@ public class Rest implements Music {
     }
     
     /**
+     * Transpose this rest.
+     */
+    public Music transpose(int semitonesUp) {
+        return this;
+    }
+    
+    /**
      * Play this rest.
      */
     public void play(SequencePlayer player, double atBeat) {
